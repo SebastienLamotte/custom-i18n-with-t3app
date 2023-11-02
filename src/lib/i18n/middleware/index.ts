@@ -33,12 +33,13 @@ export function i18n(
     );
   }
 
-  const langPathnameInfos = getLangPathname(request, pathname, langDetection);
   /**
    * Url without lang prefix
    */
+  const langPathnameInfos = getLangPathname(request, pathname, langDetection);
+
   if (langPathnameInfos.langFound) {
-    getResponseForUrlWithoutPrefix(
+    return getResponseForUrlWithoutPrefix(
       request,
       langPathnameInfos as {
         langFound: Lang;
